@@ -9,13 +9,13 @@
       <label for="best_of">Best of</label>
     </div>
     <div class="card-body">
-      <ul>
+      <ul id="posts">
         {{-- @foreach ($posts as $post)
           <li>
             {{ $post -> title }} {{ $post -> like }}
           </li>
         @endforeach --}}
-        
+
       </ul>
     </div>
   </div>
