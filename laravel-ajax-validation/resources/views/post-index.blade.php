@@ -5,7 +5,7 @@
       Posts
     </div>
     <div class="">
-      <input type="checkbox" name="best_of" value="">
+      <input id="best_of" type="checkbox" name="best_of" value="">
       <label for="best_of">Best of</label>
     </div>
     <div class="card-body">

@@ -30218,17 +30218,24 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
+function addBestOfListener() {
+  var target = $('#best_of');
+  target.change(bestOfToggle);
+}
+
+function bestOfToggle() {}
+
 function getData() {
   $.ajax({
     url: '/api/posts/all',
     method: 'GET',
     success: function success(posts) {
+      console.log(posts);
       var target = $('#posts');
 
       for (var i = 0; i < posts.length; i++) {
         var post = posts[i];
-        var html = "<li>" + post['title'] + " " + post['like'] + "</li>"; // console.log(post);
-
+        var html = "<li>" + post['title'] + " " + post['like'] + "</li>";
         target.append(html);
       }
     },
@@ -30240,6 +30247,7 @@ function getData() {
 
 function init() {
   getData();
+  addBestOfListener();
 }
 
 $(document).ready(init);
